@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  padding: 15px 60px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  width: 92%;
+  border-bottom: 1px solid #cce5ff;
+  position: relative; /* Eklendi */
+  height: 80px; /* Sabit yükseklik eklendi */
+  font-family: 'Poppins', sans-serif;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  letter-spacing: -0.5px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.search-input {
+  width: 250px;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.search-input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+.header button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.header button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.header button:active {
+  background-color: #003d82;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header h1 {
+    margin-bottom: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .header button {
+    margin: 5px 0;
+    width: 100%;
+  }
+}
+
+.shopping-cart-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 5px); /* Header'ın altında konumlandırma */
+  right: 0; /* Sağa hizalama */
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+  min-width: 200px;
+  animation: dropdownFade 0.3s ease;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: #333;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+  color: #007BFF;
+}
+
+.dropdown-item.active {
+  background-color: #e9ecef;
+  color: #007BFF;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Mobile responsive düzenlemeler */
+@media (max-width: 768px) {
+  .header {
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  .dropdown-menu {
+    position: absolute;
+    width: 200px;
+    right: 0;
+  }
+}
